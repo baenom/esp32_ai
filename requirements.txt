@@ -3,3 +3,7 @@ uvicorn
 google-generativeai
 gTTS
 requests
+SpeechRecognition
+standard-aifc
+standard-chunk
+audioop-lts
