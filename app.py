@@ -56,7 +56,7 @@ async def handle_voice(file: UploadFile = File(...)):
             raise ValueError("GEMINI_API_KEY 미설정")
             
         genai.configure(api_key=api_key)
-        model = genai.GenerativeModel('gemini-1.5-flash')
+        model = genai.GenerativeModel('models/gemini-1.5-flash')
         
         print(f"[LOG] 5단계: 제미나이 모델에게 텍스트 전달 중...", flush=True)
         response = model.generate_content([
@@ -69,7 +69,6 @@ async def handle_voice(file: UploadFile = File(...)):
         reply_text = "죄송해요, 질문을 이해하지 못했어요."
         print(f"[ERROR] 5~6단계 Gemini API 연동 실패 {e}", file=sys.stderr, flush=True)
 
-    # gTTS를 이용한 목소리 변환 및 전송
     try:
         print("[LOG] 7단계: 답변 텍스트를 gTTS를 이용해 MP3 음성 파일로 굽는 중...", flush=True)
         tts = gTTS(text=reply_text, lang='ko')
