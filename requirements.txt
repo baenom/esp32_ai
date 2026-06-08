@@ -7,3 +7,4 @@ SpeechRecognition
 standard-aifc
 standard-chunk
 audioop-lts
+python-multipart
