@@ -46,7 +46,7 @@ async def handle_voice(file: UploadFile = File(...)):
         
         response = client.models.generate_content(
             model='gemini-2.5-flash',
-            contents=[text, "너의 이름은 '김치피티'고 너는 내 비서야 이 질문에 대해 친절하게 한국어로 답변해줘."]
+            contents=[text, "너의 이름은 '김치피티'고 너는 내 비서야 이 질문에 대해 한문장으로 친절하게 한국어로 답변해줘."]
         )
         reply_text = response.text
         print(f"[LOG] 4단계: Gemini 답변 완료 [ {reply_text} ]", flush=True)
